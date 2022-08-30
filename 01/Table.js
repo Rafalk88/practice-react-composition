@@ -1,30 +1,48 @@
 import React from 'react'
 
-const TableHeader = props => {
-    return <div></div>
+const TableHeader = () => {
+    return (
+        <thead>
+            <td>Lp.</td>
+            <td>Nazwa przedmiotu</td>
+            <td>Cena jedn. [zł]</td>
+            <td>Ilość</td>
+            <td>Cena do zapłaty [zł]</td>
+        </thead>
+    )
 }
 
 const TableBody = props => {
     const {items} = props
     const list = items.map((item, i) => <TableRow item={item} key={i} />)
 
-    return <div>{ list }</div>
+    return <tbody>{list}</tbody>
 }
 
 const TableRow = props => {
     const { item } = props
     return (
-      <>
-        <h3>{item.name}</h3>
-        <p>Ilość: {item.quantity}</p>
-        <p>Cena do zapłaty: {item.price * item.quantity} zł</p>
-      </>
+      <tr>
+        <td>{ item.id }</td>
+        <td>{ item.name }</td>
+        <td>{ item.price }</td>
+        <td>{ item.quantity }</td>
+        <td>{ item.price * item.quantity }</td>
+      </tr>
     )
 }
 
 const TableFooter = props => {
     const { price } = props
-    return <div>Suma: { price } zł</div>
+    return (
+        <tfoot>
+            <td></td>
+            <td>Suma:</td>
+            <td></td>
+            <td></td>
+            <td>{ price }</td>
+        </tfoot>
+    )
 }
 
 class Table extends React.Component {
@@ -38,12 +56,12 @@ class Table extends React.Component {
     ))
 
     return (
-      <>
+      <table>
         <TableHeader />
         <TableBody items={data}>
         </TableBody>
         <TableFooter price={sumPrices.price} />
-      </>
+      </table>
     )
   }
 }
