@@ -8,11 +8,18 @@ const TableBody = props => {
     const {items} = props
     const list = items.map((item, i) => <TableRow item={item} key={i} />)
 
-    return <ul>{ list }</ul>
+    return <div>{ list }</div>
 }
 
 const TableRow = props => {
-    return <div></div>
+    const { item } = props
+    return (
+      <>
+        <h3>{item.name}</h3>
+        <p>Ilość: {item.quantity}</p>
+        <p>Cena do zapłaty: {item.price * item.quantity} zł</p>
+      </>
+    )
 }
 
 const TableFooter = props => {
