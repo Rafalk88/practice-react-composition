@@ -40,9 +40,9 @@ const TableFooter = props => {
         <tfoot>
             <tr>
                 <td></td>
+                <td></td>
+                <td></td>
                 <td>Suma:</td>
-                <td></td>
-                <td></td>
                 <td>{ price }</td>
             </tr>
         </tfoot>
