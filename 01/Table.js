@@ -5,7 +5,10 @@ const TableHeader = props => {
 }
 
 const TableBody = props => {
-    return <div></div>
+    const {items} = props
+    const list = items.map((item, i) => <TableRow item={item} key={i} />)
+
+    return <ul>{ list }</ul>
 }
 
 const TableRow = props => {
@@ -23,10 +26,7 @@ class Table extends React.Component {
     return (
       <>
         <TableHeader />
-        <TableBody>
-          <TableRow />
-          <TableRow />
-          <TableRow />
+        <TableBody items={data}>
         </TableBody>
         <TableFooter />
       </>
