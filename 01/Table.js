@@ -3,11 +3,13 @@ import React from 'react'
 const TableHeader = () => {
     return (
         <thead>
-            <td>Lp.</td>
-            <td>Nazwa przedmiotu</td>
-            <td>Cena jedn. [zł]</td>
-            <td>Ilość</td>
-            <td>Cena do zapłaty [zł]</td>
+            <tr>
+                <td>Lp.</td>
+                <td>Nazwa przedmiotu</td>
+                <td>Cena jedn. [zł]</td>
+                <td>Ilość</td>
+                <td>Cena do zapłaty [zł]</td>
+            </tr>
         </thead>
     )
 }
@@ -36,11 +38,13 @@ const TableFooter = props => {
     const { price } = props
     return (
         <tfoot>
-            <td></td>
-            <td>Suma:</td>
-            <td></td>
-            <td></td>
-            <td>{ price }</td>
+            <tr>
+                <td></td>
+                <td>Suma:</td>
+                <td></td>
+                <td></td>
+                <td>{ price }</td>
+            </tr>
         </tfoot>
     )
 }
