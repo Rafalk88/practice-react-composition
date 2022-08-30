@@ -1,12 +1,37 @@
-import React from 'react';
+import React from 'react'
 
-class Table extends React.Component {
-    render() {
-        const {data} = this.props;
-        console.log(data);
-
-        return <table></table>
-    }
+const TableHeader = props => {
+    return <div></div>
 }
 
-export default Table;
+const TableBody = props => {
+    return <div></div>
+}
+
+const TableRow = props => {
+    return <div></div>
+}
+
+const TableFooter = props => {
+    return <div></div>
+}
+
+class Table extends React.Component {
+  render() {
+    const {data} = this.props
+
+    return (
+      <>
+        <TableHeader />
+        <TableBody>
+          <TableRow />
+          <TableRow />
+          <TableRow />
+        </TableBody>
+        <TableFooter />
+      </>
+    )
+  }
+}
+
+export default Table
