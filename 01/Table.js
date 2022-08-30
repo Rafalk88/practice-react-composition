@@ -23,13 +23,14 @@ const TableBody = props => {
 
 const TableRow = props => {
     const { item } = props
+    const { id, name, price, quantity } = item
     return (
       <tr>
-        <td>{ item.id }</td>
-        <td>{ item.name }</td>
-        <td>{ item.price }</td>
-        <td>{ item.quantity }</td>
-        <td>{ item.price * item.quantity }</td>
+        <td>{ id }</td>
+        <td>{ name }</td>
+        <td>{ price }</td>
+        <td>{ quantity }</td>
+        <td>{ price * quantity }</td>
       </tr>
     )
 }
