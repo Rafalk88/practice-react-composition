@@ -23,19 +23,26 @@ const TableRow = props => {
 }
 
 const TableFooter = props => {
-    return <div></div>
+    const { price } = props
+    return <div>Suma: { price } zł</div>
 }
 
 class Table extends React.Component {
-  render() {
-    const {data} = this.props
+  render () {
+    const { data } = this.props
+    const sumPrices = data.reduce((obj1,obj2) => (
+        {
+            price: (obj1.price * obj1.quantity) + (obj2.price * obj2.quantity),
+            quantity: obj1.quantity
+        }
+    ))
 
     return (
       <>
         <TableHeader />
         <TableBody items={data}>
         </TableBody>
-        <TableFooter />
+        <TableFooter price={sumPrices.price} />
       </>
     )
   }
