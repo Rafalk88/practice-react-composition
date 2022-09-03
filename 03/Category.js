@@ -1,7 +1,23 @@
-import React from 'react';
+import React from 'react'
+import Product from './Product'
 
 function Category(props) {
-    return <h2>Category</h2>
+    const { products } = props
+    const list = products.map(({id, ...rest}) => {
+        return (
+            <Product key={id} info={{...rest}}/>
+        )
+    })
+    return (
+        <table>
+            <thead>
+                <tr>
+                    <td><b>Category</b></td>
+                </tr>
+            </thead>
+            <tbody>{ list }</tbody>
+        </table>  
+    )
 }
 
 export default Category;

@@ -8,14 +8,24 @@ import data from './data.json';
 
 class App extends React.Component {
     state = {
+        products: [],
         cart: [],
+    }
+
+    componentDidMount() {
+        this.setState(() => {
+            return {
+                products: data
+            }
+        })
     }
     
     render() {
+        const { products, cart } = this.state
         return (
             <section>
-                <Category />
-                <Cart />
+                <Category products={ products } />
+                <Cart cart={ cart }/>
             </section>
         )
     }

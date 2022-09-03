@@ -1,7 +1,17 @@
-import React from 'react';
+import React from 'react'
+import Product from './Product'
 
 function Cart(props) {
-    return <h2>Cart</h2>
+    return (
+        <table>
+            <thead>
+                <tr>
+                    <td><b>Cart</b></td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>  
+    )
 }
 
 export default Cart;
