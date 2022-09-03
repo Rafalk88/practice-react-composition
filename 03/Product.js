@@ -6,8 +6,8 @@ function Product(props) {
       <tr>
         <td>{ name }</td>
         <td>{ price }</td>
-        <td><input type="submit" value="dodaj do koszyka" disabled={false} /></td>
-        <td><input type="submit" value="usuń z koszyka" disabled={true} /></td>
+        <td><button disabled={false}>dodaj do koszyka</button></td>
+        <td><button disabled={true}>usuń z koszyka</button></td>
       </tr>
     )
 }
