@@ -1,5 +1,4 @@
 import React from 'react'
-import Product from './Product'
 
 function Cart(props) {
     return (
@@ -9,7 +8,7 @@ function Cart(props) {
                     <td><b>Cart</b></td>
                 </tr>
             </thead>
-            <tbody></tbody>
+            <tbody>{ props.children }</tbody>
         </table>  
     )
 }
