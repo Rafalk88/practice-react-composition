@@ -1,8 +1,16 @@
 import React from 'react';
 
 class Textarea extends React.Component {
+    getHeight() {
+        return this.textarea.offsetHeight
+    }
+
+    getScroll() {
+        return this.textarea.scrollHeight
+    }
+
     getSnapshotBeforeUpdate() {
-        if (this.textarea.offsetHeight < 100) {
+        if (this.getHeight() < 100) {
             return {resize: true}
         } else {
             return {resize: false}
@@ -10,8 +18,8 @@ class Textarea extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (snapshot.resize && this.textarea.offsetHeight < this.textarea.scrollHeight) {
-            this.textarea.style.height = `${this.textarea.scrollHeight}px`
+        if (snapshot.resize && this.getHeight() < this.getScroll()) {
+            this.textarea.style.height = `${this.getScroll()}px`
         } 
     }
 
